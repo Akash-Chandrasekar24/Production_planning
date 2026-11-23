@@ -127,7 +127,7 @@ class Settings(BaseSettings):
     smtp_starttls: bool = True                         # SMTP_STARTTLS (port 465 servers: set SMTP_SSL=true instead)
     smtp_ssl: bool = False                             # SMTP_SSL
     app_url: str = "http://localhost:5173"             # APP_URL: links in emails open the app here
-    cors_origins: str = "http://localhost:5173"
+    cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173,https://production-planning-khaki.vercel.app"   # CORS_ORIGINS
     agent_enabled: bool = True                         # AGENT_ENABLED: the planning agent's background check
     volume_gate: bool = True                           # VOLUME_GATE: the demand and capacity gate before the agent schedules
     auto_baseline: bool = True                        # AUTO_BASELINE: create a baseline plan at startup when none exists        # CORS_ORIGINS, comma separated

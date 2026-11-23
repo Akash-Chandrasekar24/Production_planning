@@ -10,7 +10,9 @@ export function setUser(u) { Object.assign(auth, { role: u.role, user: u.usernam
 export function signOut() { auth.token = ""; keep(""); Object.assign(auth, { role: "", user: "", name: "", plant: "" }); }
 
 // Where the API lives: VITE_API_URL at build time (e.g. https://planner-api.onrender.com on Vercel); empty = this site's own /api.
-export const API_BASE = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
+// Opened on this computer (localhost): always this site's own /api, so a local build talks to the local backend.
+const LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname);
+export const API_BASE = LOCAL ? "" : (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
 
 export async function api(path, method = "GET", body, raw) {
   const r = await fetch(API_BASE + path, {
