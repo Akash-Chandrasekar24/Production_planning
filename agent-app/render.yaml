@@ -1,0 +1,62 @@
+# Render Blueprint for the backend (FastAPI). New > Blueprint, pick this repository.
+# One web service runs the API and the agents together (RUN_MODE=all). Values marked sync: false are entered in Render's dashboard.
+services:
+  - type: web
+    name: planner-api
+    runtime: python
+    rootDir: backend
+    plan: starter                     # the free plan sleeps after 15 minutes idle, which also pauses the agents
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips="*"
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.14.4"
+      - key: RUN_MODE
+        value: all
+      - key: DATABASE_URL              # Neon connection string
+        sync: false
+      - key: READONLY_DATABASE_URL     # optional: SELECT-only role for the assistant's SQL tool
+        sync: false
+      - key: CORS_ORIGINS              # the Vercel address, e.g. https://planner.vercel.app (comma-separate several)
+        sync: false
+      - key: APP_URL                   # the Vercel address: links in emails open the app here
+        sync: false
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD            # creates the first admin only when the database has no accounts
+        sync: false
+      - key: CONNECTOR_KEY
+        sync: false
+      - key: DOMO_SUBDOMAIN
+        sync: false
+      - key: DOMO_TOKEN
+        sync: false
+      - key: DOMO_MODEL
+        sync: false
+      - key: DOMO_FALLBACK_MODEL
+        sync: false
+      - key: NVIDIA_API_KEY
+        sync: false
+      - key: NVIDIA_SAFETY_MODEL
+        sync: false
+      - key: NEON_API_KEY
+        sync: false
+      - key: NEON_PROJECT_ID
+        sync: false
+      - key: NEON_BRANCH_ID
+        sync: false
+      - key: NEON_DATABASE_NAME
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: SMTP_STARTTLS
+        sync: false

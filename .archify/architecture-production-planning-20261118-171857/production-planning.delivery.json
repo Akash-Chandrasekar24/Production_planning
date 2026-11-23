@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "a51703b7-8a25-4b88-b971-35992b26636e",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "E:\\New folder (2)\\GWC\\Manufacturing\\data\\Production_planning\\.archify\\architecture-production-planning-20261118-171857\\candidate.json",
+  "output": "E:\\New folder (2)\\GWC\\Manufacturing\\data\\Production_planning\\.archify\\architecture-production-planning-20261118-171857\\production-planning.html",
+  "specification": {
+    "sha256": "705fc1a8cab5c1fd769a1f7b950b3ba6b94d35ddc623f4018121c52ec4c042f6",
+    "bytes": 4535
+  },
+  "artifact": {
+    "sha256": "6d98e7888a3ae71f74b5a4fcf78a25d65b49e7c84c36a29020833f60c4c94feb",
+    "bytes": 772469
+  }
+}

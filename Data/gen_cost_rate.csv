@@ -1,0 +1,3 @@
+plant_id,labour_inr_per_hour,overtime_multiplier,smt_line_inr_per_min,fal_line_inr_per_min,late_penalty_pct_per_day,carrying_pct_per_year,fg_transfer_inr_per_unit,material_transfer_pct,truck_trip_inr,source
+IN-TN-01,220,2.0,85,40,0.5,18,35,0.4,6000,generated
+IN-KA-01,260,2.0,95,40,0.5,18,35,0.4,6000,generated

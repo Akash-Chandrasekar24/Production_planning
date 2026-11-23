@@ -1,0 +1,9 @@
+vehicle_id,vehicle_type,name,role,line_id,model,battery_kwh,commissioned_date,service_interval_days,plant_id,source
+IN-TN-01-FL-1,forklift,Forklift 1 · receiving,receiving,,"Electric counterbalance forklift, 2.0 t",24.0,2024-02-01,90,IN-TN-01,generated
+IN-TN-01-FL-2,forklift,Forklift 2 · shipping,shipping,,"Electric counterbalance forklift, 2.0 t",24.0,2024-02-01,90,IN-TN-01,generated
+IN-TN-01-AGV-1,agv,AGV 1 · kits to SMT,kits,SMT-L1,"Tugger AGV, 500 kg",5.0,2024-06-01,60,IN-TN-01,generated
+IN-TN-01-AGV-2,agv,AGV 2 · products to packing,products,FAL-L1,"Tugger AGV, 500 kg",5.0,2024-06-01,60,IN-TN-01,generated
+IN-KA-01-FL-1,forklift,Forklift 1 · receiving,receiving,,"Electric counterbalance forklift, 2.0 t",24.0,2024-02-01,90,IN-KA-01,generated
+IN-KA-01-FL-2,forklift,Forklift 2 · shipping,shipping,,"Electric counterbalance forklift, 2.0 t",24.0,2024-02-01,90,IN-KA-01,generated
+IN-KA-01-AGV-1,agv,AGV 1 · kits to SMT,kits,SMT-L2,"Tugger AGV, 500 kg",5.0,2024-06-01,60,IN-KA-01,generated
+IN-KA-01-AGV-2,agv,AGV 2 · products to packing,products,FAL-L2,"Tugger AGV, 500 kg",5.0,2024-06-01,60,IN-KA-01,generated

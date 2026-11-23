@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Production Planning Agent App",
+    "output": ".archify/architecture-production-planning-20261118-171857/production-planning.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "people", "type": "external", "label": "Planning team", "sublabel": "managers · plant heads", "icon": "person", "pos": [20, 300], "size": [150, 64] },
+    { "id": "ui", "type": "frontend", "label": "React UI", "sublabel": "Vite · served on :8000", "pos": [260, 300], "size": [150, 64] },
+    { "id": "api", "type": "backend", "label": "FastAPI", "sublabel": "REST /api · role checks", "pos": [500, 300], "size": [150, 64], "tag": "sign-in" },
+    { "id": "orch", "type": "backend", "label": "Orchestrator", "sublabel": "routes agent signals", "pos": [760, 300], "size": [150, 64] },
+    { "id": "planner", "type": "backend", "label": "Planning agent", "sublabel": "plans · what-ifs · tasks", "pos": [1020, 300], "size": [150, 64] },
+    { "id": "neon", "type": "database", "label": "Neon PostgreSQL", "sublabel": "plans · tasks · audit", "pos": [1280, 300], "size": [150, 64] },
+    { "id": "watchers", "type": "backend", "label": "Watcher agents", "sublabel": "orders · floor · stock", "pos": [760, 470], "size": [150, 64] },
+    { "id": "plantdata", "type": "database", "label": "Plant data", "sublabel": "orders · BOM · stock · MES", "pos": [1020, 470], "size": [150, 64] },
+    { "id": "assistant", "type": "backend", "label": "Assistant", "sublabel": "chat questions only", "pos": [500, 150], "size": [150, 64] },
+    { "id": "guard", "type": "security", "label": "NVIDIA NemoGuard", "sublabel": "safety + topic checks", "pos": [260, 150], "size": [150, 64] },
+    { "id": "domo", "type": "external", "label": "Domo AI", "sublabel": "text generation", "pos": [500, 0], "size": [150, 64] },
+    { "id": "notify", "type": "backend", "label": "Notifications", "sublabel": "bell + email", "pos": [1020, 150], "size": [150, 64] },
+    { "id": "smtp", "type": "external", "label": "Mail server", "sublabel": "SMTP", "pos": [1020, 0], "size": [150, 64] },
+    { "id": "sources", "type": "external", "label": "SAP / SQL sources", "sublabel": "read-only connectors", "pos": [1280, 470], "size": [150, 64] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "FastAPI server", "wraps": ["api", "assistant", "orch", "watchers", "planner", "plantdata", "notify"] }
+  ],
+  "connections": [
+    { "id": "use-app", "from": "people", "to": "ui", "label": "browser", "variant": "emphasis" },
+    { "id": "ui-api", "from": "ui", "to": "api", "label": "REST /api", "variant": "emphasis" },
+    { "id": "po-intake", "from": "api", "to": "orch", "label": "PO upload", "variant": "emphasis" },
+    { "id": "replan", "from": "orch", "to": "planner", "label": "re-plan", "variant": "emphasis" },
+    { "id": "save-plan", "from": "planner", "to": "neon", "label": "save plan", "variant": "emphasis" },
+    { "id": "signals", "from": "watchers", "to": "orch", "label": "signals", "fromSide": "top", "toSide": "bottom", "variant": "dashed" },
+    { "id": "watch-read", "from": "watchers", "to": "plantdata", "label": "read" },
+    { "id": "plan-read", "from": "plantdata", "to": "planner", "label": "inputs" },
+    { "id": "ask", "from": "api", "to": "assistant", "label": "ask" },
+    { "id": "guard-check", "from": "assistant", "to": "guard", "label": "check", "variant": "security" },
+    { "id": "generate", "from": "assistant", "to": "domo", "label": "answer" },
+    { "id": "hand-over", "from": "planner", "to": "notify", "label": "tasks" },
+    { "id": "email", "from": "notify", "to": "smtp", "label": "email", "variant": "dashed" },
+    { "id": "import", "from": "sources", "to": "neon", "label": "import", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "violet", "title": "Agent workflow", "items": ["PO upload runs the intake flow: checks data, three parallel looks, then plans", "Deterministic: no LLM calls in the workflow", "What-if changes can be added to the plan; the agent re-plans with them"] },
+    { "dot": "emerald", "title": "People decide", "items": ["Production manager approves every plan", "Plant heads get prepare tasks once a plan is approved", "Every decision is kept in the audit trail"] },
+    { "dot": "rose", "title": "Safety", "items": ["Sign-in with app accounts and role checks", "Assistant questions screened by NemoGuard before and after the model", "Connectors are read-only; credentials encrypted"] }
+  ]
+}

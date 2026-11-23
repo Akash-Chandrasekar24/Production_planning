@@ -1,0 +1,17 @@
+machine_id,machine_name,machine_type,line_id,plant_id,criticality,commissioned_date,planned_maintenance_interval_days,source
+M-SMT-03,Yamaha YSM20R · bay 3,Pick and Place,SMT-L3,IN-TN-01,A,2025-03-01,30,generated
+M-REF-03,Heller 1809 MK5 · bay 3,Reflow Oven,SMT-L3,IN-TN-01,A,2025-03-01,30,generated
+M-AOI-03,Koh Young Zenith · bay 3,AOI,SMT-L3,IN-TN-01,A,2025-03-01,30,generated
+M-SPI-03,CyberOptics SE · bay 3,SPI,SMT-L3,IN-TN-01,A,2025-03-01,30,generated
+M-ICT-03,Keysight ICT · bay 3,ICT Tester,SMT-L3,IN-TN-01,B,2025-03-01,30,generated
+M-SMT-04,Panasonic NPM-W2 · bay 3,Pick and Place,SMT-L4,IN-KA-01,A,2025-03-01,30,generated
+M-REF-04,BTU Pyramax · bay 3,Reflow Oven,SMT-L4,IN-KA-01,A,2025-03-01,30,generated
+M-AOI-04,Omron VT-S730 · bay 3,AOI,SMT-L4,IN-KA-01,A,2025-03-01,30,generated
+M-SPI-04,Koh Young KY8030 · bay 3,SPI,SMT-L4,IN-KA-01,A,2025-03-01,30,generated
+M-FAL-04,Screw Fastening Cell 2 · bay 4,Assembly Cell,FAL-L4,IN-KA-01,B,2025-03-01,30,generated
+M-CAM-04,Camera Calibration Rig · bay 4,Camera Tester,FAL-L4,IN-KA-01,B,2025-03-01,30,generated
+M-LEAK-04,IP Seal Tester · bay 4,Leak Tester,FAL-L4,IN-KA-01,B,2025-03-01,30,generated
+M-SMT-05,Panasonic NPM-W2 · bay 5,Pick and Place,SMT-L5,IN-KA-01,A,2025-03-01,30,generated
+M-REF-05,BTU Pyramax · bay 5,Reflow Oven,SMT-L5,IN-KA-01,A,2025-03-01,30,generated
+M-AOI-05,Omron VT-S730 · bay 5,AOI,SMT-L5,IN-KA-01,A,2025-03-01,30,generated
+M-SPI-05,Koh Young KY8030 · bay 5,SPI,SMT-L5,IN-KA-01,A,2025-03-01,30,generated

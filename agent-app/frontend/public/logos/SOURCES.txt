@@ -1,0 +1,7 @@
+﻿Connector logos, downloaded once and served locally (no runtime calls to third parties).
+- sap.svg         Simple Icons 13.21.0 (CC0-1.0), fill set to SAP brand blue #0FAAFF
+- postgresql.svg  Devicon v2.16.0 postgresql-original (MIT)
+- mysql.svg       Devicon v2.16.0 mysql-original (MIT)
+- mssql.svg       Devicon v2.16.0 microsoftsqlserver-original (MIT)
+- oracle.svg      Devicon v2.16.0 oracle-original (MIT)
+The logos are trademarks of their owners and are shown only to identify the system being connected.

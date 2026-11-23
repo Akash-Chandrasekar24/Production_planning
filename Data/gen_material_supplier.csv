@@ -1,0 +1,19 @@
+material_id,supplier_id,supplier_name,lead_time_days,moq,pack_qty,unit_cost_inr,on_time_pct,source
+MAT-ADH-018,SUP-ADH,Adh supplier,5,400,200,1800.0,88.2,generated
+MAT-ANT-012,SUP-ANT,Ant supplier,6,10000,5000,55.0,91.6,generated
+MAT-BAT-006,SUP-BAT,Bat supplier,12,2000,1000,820.0,87.8,generated
+MAT-BOX-014,SUP-BOX,Box supplier,4,10000,5000,72.0,90.4,generated
+MAT-CAM-007,SUP-CAM,Cam supplier,15,2000,1000,720.0,91.4,generated
+MAT-CAM-008,SUP-CAM,Cam supplier,15,2000,1000,260.0,84.9,generated
+MAT-CBL-015,SUP-CBL,Cbl supplier,5,10000,5000,95.0,83.7,generated
+MAT-CON-013,SUP-CON,Con supplier,5,10000,5000,38.0,85.3,generated
+MAT-DSP-005,SUP-DSP,Dsp supplier,18,2000,1000,1650.0,93.5,generated
+MAT-GLS-010,SUP-GLS,Gls supplier,9,4000,2000,190.0,94.7,generated
+MAT-HSG-009,SUP-HSG,Hsg supplier,7,4000,2000,310.0,89.8,generated
+MAT-MEM-002,SUP-MEM,Mem supplier,14,2000,1000,1100.0,92.3,generated
+MAT-NAND-003,SUP-NAND,Nand supplier,14,2000,1000,950.0,94.6,generated
+MAT-PASTE-017,SUP-PASTE,Paste supplier,5,400,200,6200.0,90.7,generated
+MAT-PCB-004,SUP-PCB,Pcb supplier,10,4000,2000,680.0,92.2,generated
+MAT-SCR-016,SUP-SCR,Scr supplier,3,20000,10000,12.0,95.0,generated
+MAT-SOC-001,SUP-SOC,Soc supplier,21,1000,500,4200.0,83.7,generated
+MAT-SPK-011,SUP-SPK,Spk supplier,6,10000,5000,85.0,88.5,generated
