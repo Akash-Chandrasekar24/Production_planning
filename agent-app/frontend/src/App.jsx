@@ -217,12 +217,13 @@ function Shell({ me, onSignOut }) {
       <section className="main" onScrollCapture={e => { if (e.target.classList?.contains("page")) setScrolled(e.target.scrollTop > 4); }}>
         <header className={"sp-top" + (scrolled ? " scrolled" : "")}>
           <button className="sp-icon-btn sp-menu-btn" aria-label="Open navigation" aria-expanded={drawer} onClick={() => setDrawer(true)}><Icon n="menu" size={18} /></button>
-          <form className="sp-search" role="search" onSubmit={e => { e.preventDefault(); if (q.trim()) setJump({ order: q.trim(), t: Date.now() }); }}>
-            <Icon n="search" size={16} />
-            <input ref={searchRef} value={q} onChange={e => setQ(e.target.value)} placeholder="Search an order…" aria-label="Search an order" />
-            <kbd>Ctrl K</kbd>
-          </form>
+          <div className="sp-title"><b>GWC Data.AI</b><span className="sp-title-x" aria-hidden="true">×</span><span>Production Planning Agentic System</span></div>
           <div className="sp-top-r">
+            <form className="sp-search" role="search" onSubmit={e => { e.preventDefault(); if (q.trim()) setJump({ order: q.trim(), t: Date.now() }); }}>
+              <Icon n="search" size={16} />
+              <input ref={searchRef} value={q} onChange={e => setQ(e.target.value)} placeholder="Search an order…" aria-label="Search an order" />
+              <kbd>Ctrl K</kbd>
+            </form>
             <button className="sp-icon-btn" aria-label={theme === "light" ? "Dark mode" : "Light mode"} title={theme === "light" ? "Dark mode" : "Light mode"} onClick={toggleTheme}>
               <Icon n={theme === "light" ? "sun" : "moon"} size={18} /></button>
             <div className="sp-me" ref={bellRef}>

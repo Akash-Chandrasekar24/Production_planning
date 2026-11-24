@@ -3869,3 +3869,11 @@ button.dz-chip:focus-visible { outline:2px solid var(--brand-blue); outline-offs
 
 /* the review page scrolls as a whole: its sections keep their full height (the run never collapses) */
 .uo-page > * { flex-shrink:0; }
+
+/* top bar: the product name on the left, search with the icons on the right */
+.sp-title { display:flex; align-items:baseline; gap:8px; min-width:0; font-size:16px; white-space:nowrap; overflow:hidden; }
+.sp-title b { font-weight:800; color:var(--brand-purple); }
+.sp-title-x { color:var(--brand-orange); font-weight:700; }
+.sp-title span:last-child { font-weight:700; color:var(--text-primary); overflow:hidden; text-overflow:ellipsis; }
+@media (max-width:900px) { .sp-title span:not(:first-child) { display:none; } .sp-title b + .sp-title-x { display:none; } }
+@media (max-width:600px) { .sp-top-r .sp-search { width:160px; } .sp-search kbd { display:none; } }
